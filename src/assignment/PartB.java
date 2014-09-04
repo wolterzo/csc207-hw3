@@ -11,8 +11,6 @@ public class PartB
     /* Here if you use MAX_VALUE, it gives an incorrect answer
      * return ((left + right) / 2);
      * */
-    return((left/2)+(right/2));
-    
-    
+    return((left/2)+(right/2));    
   } // average(int,int)
 } // class PartB
