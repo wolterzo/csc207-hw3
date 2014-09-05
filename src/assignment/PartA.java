@@ -3,7 +3,8 @@ package assignment;
 public class PartA
 {
   /**
-   * Determine if a is a multiple of b.
+   * Determine if a is a multiple of b. 
+   * precondition: b is not zero.
    */
   public static boolean isMultiple(long a, long b)
   {
@@ -42,20 +43,20 @@ public class PartA
   }//isOdd(int)
 
   /**
-   * Produce sum on all positive odd integers less than n.
+   * Produce sum of all positive odd integers less than n.
    */
   public static int oddSumTo(int n)
   {
     int sum;
     sum = 0;
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i < n; i++)
       {
         if(isOdd(i))
           {
             sum = sum + i;
           }//if
       }//for
-    return 0;
+    return sum;
   }//oddSumTo (int)
 
   /**
@@ -88,39 +89,48 @@ public class PartA
           {
             if(ints[i]==ints[j])
               {
-                return true;
+                return false;
               }
           }//for
       }//for
-    return false;
+    return true;
   }//allDistinct(int[])
 
   /**
    * Reverse the order of integers in an array.
+   * NEED TO FIX! :(
    */
-  public static void reverseInts(int[] ints)
+  public static int[] reverseInts(int[] ints)
   {
     int temp; // to hold integers we're moving
     int length;
     length = ints.length;
     if(isOdd(length))
       {
-        for(int i = 0; i <= ((length/2)-2); i++)
+        for(int i = 0; i < (length/2); i++)
           {
             temp = ints[i];
-            ints[i]=ints[length-i];
-            ints[length-i] = temp;
+            System.out.println (temp);
+            ints[i]=ints[(length - i) - 1];
+            ints[(length - i) - 1] = temp;
           }//for
       }//if ints.length is odd
     else
       {
-        for(int i = 0; i <= ((length/2)-1); i++)
+        for(int i = 0; i < (length/2); i++)
           {
             temp = ints[i];
-            ints[i]=ints[length-i];
-            ints[length-i] = temp;
+            System.out.println (temp);
+            ints[i]=ints[(length - i) - 1];
+            System.out.println (ints[i]);
+            ints[(length - i) - 1] = temp;
+            System.out.println (ints[(length - i) - 1]);
           }//for
       }//else
+    return ints;
   }//reverseInts(int[])
-
+public static void main(String[] args)
+{
+  reverseInts(new int[] { 1, 2 });
+}
 } //class PartA
