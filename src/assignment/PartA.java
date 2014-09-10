@@ -23,6 +23,11 @@ public class PartA
    */
   public static boolean isOdd(int i)
   {
+    if (i == Integer.MIN_VALUE)
+      {
+        return false;
+      }//if MIN_VALUE
+
     i = Math.abs(i);
     while (i >= 0)
       {
@@ -36,10 +41,10 @@ public class PartA
           }//else if
         i = i - 2;
       }//while
-  /*With Spencer's help, added a return boolean after while loop.
-    If the while loop works correctly, we'll never reach this point.
-    */
-    return true; 
+    /*With Spencer's help, added a return boolean after while loop.
+      If the while loop works correctly, we'll never reach this point.
+      */
+    return true;
   }//isOdd(int)
 
   /**
@@ -51,7 +56,7 @@ public class PartA
     sum = 0;
     for (int i = 0; i < n; i++)
       {
-        if(isOdd(i))
+        if (isOdd(i))
           {
             sum = sum + i;
           }//if
@@ -65,11 +70,11 @@ public class PartA
    */
   public static boolean isOddProd(int[] ints)
   {
-    for(int i = 0; i < ints.length - 1; i++)
+    for (int i = 0; i < ints.length - 1; i++)
       {
-        for(int j = i+1; j < ints.length; j++)
+        for (int j = i + 1; j < ints.length; j++)
           {
-            if(isOdd(ints[i]*ints[j]))
+            if (isOdd(ints[i] * ints[j]))
               {
                 return true;
               }//if
@@ -83,11 +88,11 @@ public class PartA
    */
   public static boolean allDistinct(int[] ints)
   {
-    for(int i = 0; i < ints.length - 1; i++)
+    for (int i = 0; i < ints.length - 1; i++)
       {
-        for(int j = i+1; j < ints.length; j++)
+        for (int j = i + 1; j < ints.length; j++)
           {
-            if(ints[i]==ints[j])
+            if (ints[i] == ints[j])
               {
                 return false;
               }
@@ -98,39 +103,35 @@ public class PartA
 
   /**
    * Reverse the order of integers in an array.
-   * NEED TO FIX! :(
    */
   public static int[] reverseInts(int[] ints)
   {
     int temp; // to hold integers we're moving
     int length;
     length = ints.length;
-    if(isOdd(length))
+    if (isOdd(length))
       {
-        for(int i = 0; i < (length/2); i++)
+        for (int i = 0; i < (length / 2); i++)
           {
             temp = ints[i];
-            System.out.println (temp);
-            ints[i]=ints[(length - i) - 1];
+            System.out.println(temp);
+            ints[i] = ints[(length - i) - 1];
             ints[(length - i) - 1] = temp;
           }//for
       }//if ints.length is odd
     else
       {
-        for(int i = 0; i < (length/2); i++)
+        for (int i = 0; i < (length / 2); i++)
           {
             temp = ints[i];
-            System.out.println (temp);
-            ints[i]=ints[(length - i) - 1];
-            System.out.println (ints[i]);
+            ints[i] = ints[(length - i) - 1];
             ints[(length - i) - 1] = temp;
-            System.out.println (ints[(length - i) - 1]);
           }//for
       }//else
     return ints;
   }//reverseInts(int[])
-public static void main(String[] args)
-{
-  reverseInts(new int[] { 1, 2 });
-}
+
+  public static void main(String[] args)
+  {
+  }
 } //class PartA
