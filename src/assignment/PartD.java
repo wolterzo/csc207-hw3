@@ -2,11 +2,11 @@ package assignment;
 
 public class PartD
 {
-  public static String nameGame(String name)
+  public static String nameGame(String inputName)
   {
-    name = name.toLowerCase();
+    String name = inputName.toLowerCase();
     String ame = "";
-    
+
     for (int i = 0; i < name.length(); i++)
       {
         char ch = name.charAt(i);
@@ -16,21 +16,24 @@ public class PartD
             break;
           } //if
       } //for
-      
-    /*name = name.substring(0,i).toUpperCase() + ame;*/
-        
-    String result = name + "!\n" + name + ", " + name + " bo B"
-    + ame + " Bonana fana fo F" + ame + "\n" + "Fee fy mo M" + ame
-    + ", " + name + "!\n"; 
- 
+
+    String result =
+        inputName + "!\n" + inputName + ", " + inputName + " bo B" + ame
+            + " Bonana fana fo F" + ame + "\n" + "Fee fy mo M" + ame + ", "
+            + inputName + "!\n";
+
     return result;
   }//nameGame(String name)
-  
+
   public static void main(String[] args)
   {
 
-    System.out.println(nameGame("Sholton"));
-    
+    System.out.println(nameGame("Zoltan"));
+    System.out.println(nameGame("zoe"));
+    System.out.println(nameGame("ZHI"));
+    System.out.println(nameGame("Harry"));
+    System.out.println(nameGame("SamR"));
+
   }//main(String[] args)
 
 }
