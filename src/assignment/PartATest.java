@@ -28,9 +28,14 @@ public class PartATest
     assertEquals("negative odd", true, PartA.isOdd(-5));
     assertEquals("positive even", false, PartA.isOdd(4));
     assertEquals("positive odd", true, PartA.isOdd(7));
+    for(int i = -100; i<101; i+=2)
+      {
+        assertEquals("even", false, PartA.isOdd(i));
+        assertEquals("odd", true, PartA.isOdd(i-1));
+      }//for
     assertEquals("zero", false, PartA.isOdd(0));
     assertEquals("max value", true, PartA.isOdd(Integer.MAX_VALUE));
-    //assertEquals("min value", false, PartA.isOdd(Integer.MIN_VALUE));//fix this. :(
+    assertEquals("min value", false, PartA.isOdd(Integer.MIN_VALUE));//fix this. :(
   }
 
   @Test
@@ -38,6 +43,7 @@ public class PartATest
   {
     assertEquals("simple test even", 25, PartA.oddSumTo(10));
     assertEquals("simple test odd", 16, PartA.oddSumTo(9));
+    assertEquals("zero", 0, PartA.oddSumTo(0));
   }
 
   @Test
@@ -73,6 +79,7 @@ public class PartATest
     assertArrayEquals(new int[] { 1 }, PartA.reverseInts(new int[] { 1 }));
     assertArrayEquals(new int[] { 1, 2 }, PartA.reverseInts(new int[] { 2, 1 }));
     assertArrayEquals(new int[] { 1, 2, 3 }, PartA.reverseInts(new int[] { 3, 2, 1 }));
+    assertArrayEquals(new int[] { 1, 2, 3, 4 }, PartA.reverseInts(new int[] { 4, 3, 2, 1 }));
   }
 
 }
